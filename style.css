@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: lightpink;
+    height: 100vh;
+}
+
+button {
+padding: 10px;
+border-radius: 10pt;
+background-color: lightsalmon;
+}
+
+#choices {
+    display: flex;
+    flex-direction: column;
+}
