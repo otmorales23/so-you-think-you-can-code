@@ -3,7 +3,7 @@ let timer = document.getElementById("timer");
 let questions = document.getElementById("questions");
 let choices = document.getElementById("choices");
 let score = document.getElementById("score");
-let initials = document.getElementById("initials");
+let initialsForm = document.getElementById("initialsForm");
 
 //create array of questions
 var questionArr = [
@@ -40,6 +40,7 @@ var questionArr = [
 let questionIndex = 0
 let scoreCount = 0
 let timerCount = 75
+let storedUsers;
 
 //create button that begins quiz
 startBtn.addEventListener("click", function () {
@@ -88,7 +89,7 @@ function manageUserDecision(userDecision) {
     choices.innerHTML = ""
 
     if(questionIndex === questionArr.length) {
-        endQuiz()
+       return endQuiz()
     }
     runQuiz()
 }
@@ -104,6 +105,27 @@ function endQuiz() {
 
 function onPageLoad () {
     initials.style.display = "none"
+    if(JSON.parse(localStorage.getItem("highscores")) === null) {
+        storedUsers = []
+    }
+    else {
+        storedUsers = JSON.parse(localStorage.getItem("highscores"))
+    }
+    console.log(storedUsers);
 }
 
 onPageLoad()
+
+//save highscore in local storage
+function saveScore (e) {
+    e.preventDefault();
+    let newScore = {
+        user: initials.value,
+        userScore: scoreCount
+    }
+    storedUsers.push(newScore)
+    localStorage.setItem("highscores", JSON.stringify(storedUsers))
+
+    window.location = "highscores.html"
+}
+initialsForm.addEventListener("submit", saveScore)
