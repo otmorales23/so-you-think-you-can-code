@@ -64,10 +64,12 @@ function startTimer() {
 
 //display question with choices
 function runQuiz() {
+    highscoresBtn.style.display = "none"
     score.textContent = "Score: " + scoreCount
     questions.textContent = questionArr[questionIndex].question
     for (let i = 0; i < questionArr[questionIndex].choices.length; i++) {
         let choiceBtn = document.createElement("button")
+        choiceBtn.className = "choiceBtn"
         choiceBtn.textContent = questionArr[questionIndex].choices[i]
         choiceBtn.addEventListener("click", function () {
             manageUserDecision(choiceBtn.textContent);

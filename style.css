@@ -7,13 +7,41 @@ body {
     height: 100vh;
 }
 
+h1 {
+    font-size: 55px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 20px;
+
+}
+
 button {
-padding: 10px;
-border-radius: 10pt;
-background-color: lightsalmon;
+    padding: 10px;
+    border-radius: 10pt;
+    background-color: lightsalmon;
+    border-color: #d17652;
+    }
+
+#startBtn {
+    font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+    font-size: 45px;
+}
+
+#highscoresBtn {
+    margin-top: 20px; 
+}
+
+#questions {
+    font-size: 35px;
+    margin-bottom: 15px;
 }
 
 #choices {
     display: flex;
     flex-direction: column;
+}
+
+.choiceBtn {
+    font-size: 20px;
+    font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+    margin-bottom: 15px;
 }
