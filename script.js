@@ -3,6 +3,7 @@ let timer = document.getElementById("timer");
 let questions = document.getElementById("questions");
 let choices = document.getElementById("choices");
 let score = document.getElementById("score");
+let initials = document.getElementById("initials");
 
 //create array of questions
 var questionArr = [
@@ -54,15 +55,15 @@ function startTimer() {
         timerCount--
         timer.textContent = "Time: " + timerCount;
         if (timerCount <= 0) {
-            clearInterval(countdown)
-            timer.style.display = "none";
+            clearInterval(countdown);
+            endQuiz()
         }
     }, 1000);
 }
 
 //display question with choices
 function runQuiz() {
-    score.textContent= "Score: " + scoreCount
+    score.textContent = "Score: " + scoreCount
     questions.textContent = questionArr[questionIndex].question
     for (let i = 0; i < questionArr[questionIndex].choices.length; i++) {
         let choiceBtn = document.createElement("button")
@@ -83,6 +84,26 @@ function manageUserDecision(userDecision) {
     } else {
         timerCount -= 5;
     }
-    runQuiz() 
-    
+    questionIndex++
+    choices.innerHTML = ""
+
+    if(questionIndex === questionArr.length) {
+        endQuiz()
+    }
+    runQuiz()
 }
+
+//when finished end quiz (input initials)
+function endQuiz() {
+    timer.style.display = "none"
+    questions.style.display = "none"
+    choices.style.display = "none"
+    initials.style.display = "block"
+}
+
+
+function onPageLoad () {
+    initials.style.display = "none"
+}
+
+onPageLoad()
