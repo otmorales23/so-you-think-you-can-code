@@ -1,8 +1,10 @@
-let startBtn = document.getElementById("startBtn")
-let timer = document.getElementById("timer")
+let startBtn = document.getElementById("startBtn");
+let timer = document.getElementById("timer");
+let questions = document.getElementById("questions");
+let choices = document.getElementById("choices");
 
 //create array of questions
-var questionArrr = [
+var questionArr = [
     {
         question: "JavaScript is a ___ -side programming language.",
         choices: ["Client", "Server", "Both"]
@@ -28,22 +30,36 @@ var questionArrr = [
     },
 ]
 
+questionIndex = 0
 //create button that begins quiz
 startBtn.addEventListener("click", function () {
     startBtn.style.display = "none"
-    startTimer()
+    startTimer();
+    runQuiz();
 })
 
 //create timer and start quiz
 function startTimer() {
     let timerCount = 10
-    timer.textContent = timerCount;
+    timer.textContent = "Time: " + timerCount;
     let countdown = setInterval(() => {
         timerCount--
-        timer.textContent = timerCount;
+        timer.textContent = "Time: " + timerCount;
         if (timerCount <= 0) {
-            clearIntveral(countdown)
+            clearInterval(countdown)
             timer.style.display = "none";
         }
     }, 1000);
 }
+
+//display question with choices
+function runQuiz() {
+    questions.textContent = questionArr[questionIndex].question
+    for (let i = 0; i < questionArr[questionIndex].choices.length; i++) {
+        let choiceBtn = document.createElement("button")
+        choiceBtn.textContent = questionArr[questionIndex].choices[i]
+        choices.append(choiceBtn)
+    }
+
+}
+
