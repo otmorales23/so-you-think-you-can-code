@@ -39,7 +39,7 @@ var questionArr = [
 
 let questionIndex = 0
 let scoreCount = 0
-let timerCount = 75
+let timerCount = 60
 let storedUsers;
 
 //create button that begins quiz
