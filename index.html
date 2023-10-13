@@ -1,25 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Quiz</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coding Quiz Challenge</title>
+    <link rel="stylesheet" href="./Assets/CSS/style.css">
 </head>
+
 <body>
-    <h1 style="color: #bf397c;">SO YOU THINK YOU CAN CODE?</h1>
-    <h2>Take this quiz if you dare!</h2>
-    <button id="startBtn">Start</button>
-    <a href="highscores.html">
-        <button id="highscoresBtn">Highscores</button>
-    </a>
-    <div id="score"></div>
-    <div id="timer"></div>
-    <div id="questions"></div>
-    <div id="choices"></div>
-    <form id="initialsForm">
-        <input type="text" id="initials">
-    </form>
-    <script src="script.js"></script>
+    <section class="intro-container">
+        <h1>So You Think You Can Code?</h1>
+        <h2>Think you know your coding basics? Answer the following questions within the time limit to find out!</h2>
+        <h3>(Reminder: Incorrect answers will penalize your time by ten seconds!)</h2>
+            <button id="start">START ▶</button>
+            <button id="highscoresBtn" onclick="location.href='./Assets/highscores.html'">View High Scores</button>
+
+    </section>
+
+    <section id="hidden" class="quiz-container">
+        <!-- Timer -->
+        <div id="timer-count"></div>
+
+        <!-- Questions and Choices -->
+        <div id="questions"></div>
+        <div id="choices"></div>
+        <div id="score" style="display: none;"></div>
+
+        <p id="quizEnd" style="display: none;">All Done!</p>
+        <!-- Initials Input -->
+        <form class="initialsForm1" id="initialsForm" style="display: none;">
+            <label>
+                Enter Your Initials To Save Your Score:
+                <input id="initials" type="text" required minlength="1" maxlength="3">
+            </label>
+            <button type="submit" class="scoreBtn">Enter</button>
+        </form>
+    </section>
+
+    <script src="./Assets/js/script.js"></script>
 </body>
+
 </html>
