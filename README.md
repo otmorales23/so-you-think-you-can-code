@@ -24,7 +24,7 @@
   Oliver Terry-Morales
 
   ## Email
-  If you have any questions please don't hesitate to reach out either via email at oliverwills0227@gmail.com or you can reach me via my LinkedIn profile at https://linkedin.com/otmorales23
+  If you have any questions please don't hesitate to reach out either via email at oliverwills0227@gmail.com or you can reach me via my [LinkedIn profile.](https://www.linkedin.com/in/otmorales23/)
 
   ## GitHub
   https://github.com/otmorales23
